@@ -1,20 +1,15 @@
-window.onload = () => {
-    document.querySelector('#btn').addEventListener("click", () => {
-        document.querySelector('#domain').innerHTML = generateDomain();
+var pronoun = ['the', 'our'];
+var adj = ['great', 'big'];
+var noun = ['jogger', 'racoon'];
 
-var generateDomain = () => {
+function DomainGenerator (i,j,k){
+    for (let i = 0; i < pronoun.length; i++){
+    for (let j = 0; j < adj.length; j++){
+        for (let k = 0; k < noun.length; k++){
+            console.log(pronoun[i] + adj[j] + noun[k] + ".com");
+        }
+    }
+    }
+}
 
-    let pronoun = ["the", "our"];
-    let adj = ["great", "big"];
-    let noun = ["jogger", "racoon"];
-
-    let pronounRandom = Math.floor(Math.random() * (pronoun.length));
-    console.log(pronounRandom);
-    let adjRandom = Math.floor(Math.random() * (adj.length));
-    console.log(adjRandom);
-    let nounRandom = Math.floor(Math.random() * (noun.length));
-    console.log(nounRandom);
-
-    return pronoun[pronounRandom] + adj[adjRandom] + noun[nounRandom] + "com";
-};
-console.log(generateDomain);
+document.getElementById("domain").innerHTML= DomainGenerator
